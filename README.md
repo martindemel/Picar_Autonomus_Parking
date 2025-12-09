@@ -55,6 +55,8 @@ ITAI 2374 - Robots/
 #### Project Description
 A vision-based autonomous parking system implemented on the SunFounder PiCar-X robot using Raspberry Pi 5. The system uses computer vision with OpenCV and Picamera2 to detect two black square markers on the floor and autonomously parks the robot centered between them.
 
+![Autonomous Parking System](example.png)
+
 **Key Features:**
 - Real-time computer vision processing using Picamera2
 - Marker detection and tracking using OpenCV
