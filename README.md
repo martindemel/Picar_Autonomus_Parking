@@ -2,6 +2,8 @@
 
 This project implements a vision-based autonomous parking behavior for the SunFounder PiCar-X using a Raspberry Pi 5, Picamera2, and OpenCV. The car detects two printed black squares on a light floor and parks itself centered between them.
 
+![Autonomous Parking Example](example.png)
+
 ## Features
 
 - Uses the PiCar-X camera (Picamera2) to detect black square markers.
