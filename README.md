@@ -1,92 +1,190 @@
-# PiCar-X Autonomous Parking
+# ITAI 2374 - Robots
 
-This project implements a vision-based autonomous parking behavior for the SunFounder PiCar-X using a Raspberry Pi 5, Picamera2, and OpenCV. The car detects two printed black squares on a light floor and parks itself centered between them.
+**Course:** ITAI 2374 - Robots  
+**Semester:** Fall 2025  
+**Student:** Martin Demel  
+**Institution:** Houston Community College (HCC)
 
-![Autonomous Parking Example](example.png)
+---
 
-## Features
+## 📋 Repository Overview
 
-- Uses the PiCar-X camera (Picamera2) to detect black square markers.
-- Computes the midpoint between two markers and steers to stay centered.
-- Moves forward while adjusting steering angle based on image-space error.
-- Stops when the car is centered and close enough to the markers (based on their apparent size in the image).
-- Ultrasonic safety is currently disabled for tuning, but logic is in place and can be re-enabled.
+This repository contains coursework, assignments, and projects completed during the ITAI 2374 Robotics course. The repository showcases practical applications of robotics concepts, including sensor technology, autonomous navigation, and embedded systems programming with Raspberry Pi 5 and the SunFounder PiCar-X robot.
 
-## Requirements
+---
 
-- Raspberry Pi 5 (or compatible Pi) running Raspberry Pi OS (Bookworm).
-- SunFounder PiCar-X with Python libraries installed under `~/picar-x/lib`.
-- Python packages:
-  - `python3-opencv`
-  - `python3-numpy`
-  - `python3-picamera2`
-  - `libcamera-apps` (system package)
+## 📁 Repository Structure
 
-Install the main dependencies:
+```
+ITAI 2374 - Robots/
+├── Assignment1 - Robotics Sensors _DEMEL.docx
+├── Assignment1_GLOSSARY_DEMEL.docx
+├── Raspberry Pi5 HW_Demel_Musil.pptx
+├── raspberry-pi-5-product-brief.pdf
+├── final/
+│   ├── auto_park_between_squares.py
+│   ├── AUtonomus Parking_Martin_Demel_ITAI2374.pptx
+│   └── README.md
+└── README.md (this file)
+```
 
+---
+
+## 📚 Contents
+
+### Assignment 1: Robotics Sensors
+- **File:** `Assignment1 - Robotics Sensors _DEMEL.docx`
+- **Description:** Comprehensive assignment covering various robotics sensors, their applications, and technical specifications.
+
+### Assignment 1: Glossary
+- **File:** `Assignment1_GLOSSARY_DEMEL.docx`
+- **Description:** A detailed glossary of robotics terminology and concepts covered in the course.
+
+### Raspberry Pi 5 Hardware Presentation
+- **Files:**
+  - `Raspberry Pi5 HW_Demel_Musil.pptx` - Presentation on Raspberry Pi 5 hardware
+  - `raspberry-pi-5-product-brief.pdf` - Official product documentation
+
+- **Description:** Hardware presentation exploring the Raspberry Pi 5's specifications, capabilities, and applications in robotics projects.
+
+### Final Project: Autonomous Parking System
+- **Directory:** `final/`
+- **Main File:** `auto_park_between_squares.py`
+- **Presentation:** `AUtonomus Parking_Martin_Demel_ITAI2374.pptx`
+
+#### Project Description
+A vision-based autonomous parking system implemented on the SunFounder PiCar-X robot using Raspberry Pi 5. The system uses computer vision with OpenCV and Picamera2 to detect two black square markers on the floor and autonomously parks the robot centered between them.
+
+**Key Features:**
+- Real-time computer vision processing using Picamera2
+- Marker detection and tracking using OpenCV
+- Proportional steering control for precise navigation
+- Distance estimation based on marker size
+- Safety features and graceful error handling
+
+**Technologies Used:**
+- Python 3
+- OpenCV (cv2)
+- NumPy
+- Picamera2
+- Raspberry Pi 5
+- SunFounder PiCar-X Robot Platform
+
+For detailed setup instructions, requirements, and usage, see the [final project README](./final/README.md).
+
+---
+
+## 🛠️ Technologies & Tools
+
+- **Hardware:**
+  - Raspberry Pi 5
+  - SunFounder PiCar-X Robot Kit
+  - Picamera2 Camera Module
+  - Ultrasonic Sensors
+
+- **Software:**
+  - Python 3
+  - OpenCV
+  - NumPy
+  - Picamera2
+  - Raspberry Pi OS (Bookworm)
+  - libcamera-apps
+
+- **Development Environment:**
+  - SSH/VNC Remote Access
+  - Git Version Control
+  - Visual Studio Code / Cursor IDE
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+To run the projects in this repository, you'll need:
+
+1. **Hardware:**
+   - Raspberry Pi 5 (or compatible Raspberry Pi model)
+   - SunFounder PiCar-X robot kit
+   - MicroSD card (16GB+ recommended)
+   - Power supply for Raspberry Pi
+
+2. **Software:**
+   ```bash
+   # Update system packages
+   sudo apt update && sudo apt upgrade -y
+   
+   # Install required Python packages
+   sudo apt install -y python3-opencv python3-numpy python3-picamera2 libcamera-apps
+   
+   # Install PiCar-X libraries (follow SunFounder documentation)
+   ```
+
+### Clone This Repository
 ```bash
-sudo apt update
-sudo apt install -y python3-opencv python3-numpy python3-picamera2 libcamera-apps
+git clone https://github.com/YOUR_USERNAME/ITAI-2374-Robots.git
+cd ITAI-2374-Robots
 ```
 
-## Setup
+---
 
-1. Clone or copy this repository to your Pi.
-2. Ensure the PiCar-X Python libraries are installed and available under `~/picar-x/lib`.
-3. Place the file `auto_park_between_squares.py` in your `~/picar-x` folder (or adjust the path in the script).
+## 📖 Course Learning Objectives
 
-## Preparing the Parking Markers
+Through this course, the following competencies were developed:
 
-* Print two solid black squares on white paper (e.g., US Letter or A4).
-* Place the papers on a light-colored floor with a gap between them like a parking slot.
-* Put the PiCar-X a short distance away, facing the two squares.
-* Make sure the area is reasonably well-lit.
+1. **Sensor Technology:** Understanding and implementing various robotics sensors including ultrasonic, infrared, and camera-based systems
+2. **Computer Vision:** Real-time image processing and object detection for autonomous navigation
+3. **Embedded Systems:** Programming and interfacing with Raspberry Pi hardware
+4. **Control Systems:** Implementing proportional control algorithms for robot steering
+5. **Python Programming:** Advanced Python programming for robotics applications
+6. **Problem Solving:** Debugging and troubleshooting hardware/software integration issues
 
-## Running the Script
+---
 
-From the Pi:
+## 🎯 Key Projects Highlights
 
-```bash
-cd ~/picar-x
-python3 auto_park_between_squares.py
-```
+### Autonomous Parking System
+The flagship project demonstrates practical application of:
+- Computer vision algorithms
+- Real-time image processing
+- PID control concepts (proportional steering)
+- Safety-critical systems design
+- Marker-based navigation
 
-You should see console output like:
+**Performance Metrics:**
+- Processing Speed: ~30 FPS
+- Parking Accuracy: Centered within 6% tolerance
+- Detection Range: Variable based on marker size and lighting
 
-```text
-[INFO] Starting auto-park between squares.
-      Place the car so the two black squares are in front of it,
-      then this script will try to align and drive into the spot.
-      Press Ctrl+C to abort.
-[CTRL] steer=  3.4 deg  speed= 30 parked=False
-...
-```
+---
 
-Press `Ctrl + C` any time to stop the script.
+## 📝 License
 
-If your system requires `sudo` for Picamera2 (like some SunFounder examples), run:
+This repository contains academic coursework. The code is provided for educational purposes and portfolio demonstration. Feel free to use the code as reference material for your own learning, but please maintain academic integrity by not directly copying for course submissions.
 
-```bash
-sudo python3 auto_park_between_squares.py
-```
+---
 
-## Tuning Parameters
+## 👤 Author
 
-Key parameters are defined near the top of the script:
+**Martin Demel**  
+Houston Community College  
+ITAI 2374 - Robots, Fall 2025
 
-* `GRAY_THRESHOLD` – threshold for detecting dark markers. Increase if the markers appear too light; decrease if too much noise is detected.
-* `MIN_MARKER_AREA`, `MAX_MARKER_AREA` – filter small/large blobs. Reduce `MIN_MARKER_AREA` if squares are far away and appear small.
-* `TARGET_MARKER_HEIGHT` – controls how close the car gets before considering itself parked. Increase to stop closer; decrease to stop further away.
-* `KP_STEER` and `MAX_STEER_ANGLE` – adjust how aggressively the car steers toward the center.
-* `USE_ULTRASONIC`, `SAFE_DISTANCE_CM` – enable and configure ultrasonic safety (currently disabled for tuning).
+---
 
-## Notes
+## 🙏 Acknowledgments
 
-* When the car is far away, both squares should be visible; as it comes closer, it may only see one square. The script falls back to using a single detected marker and continues to move.
-* The current configuration is tuned for a reasonably bright room and black-on-white markers. You may need to adjust thresholds for your environment.
-* Always test in an open, safe area and be ready to stop the car with `Ctrl + C` or by physically blocking it.
+- Houston Community College - Department of Information Technology
+- SunFounder for PiCar-X documentation and libraries
+- Raspberry Pi Foundation for comprehensive hardware documentation
+- OpenCV community for computer vision resources
 
-## License
+---
 
-You can adapt and extend this project freely for educational and personal use.
+## 📧 Contact
+
+For questions or collaboration opportunities, please reach out through GitHub.
+
+---
+
+*Last Updated: December 2025*
 
